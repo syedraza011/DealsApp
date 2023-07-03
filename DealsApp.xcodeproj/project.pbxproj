@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		E99F39B82A531D0A003045FA /* DealsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39B72A531D0A003045FA /* DealsAppApp.swift */; };
-		E99F39BA2A531D0A003045FA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39B92A531D0A003045FA /* ContentView.swift */; };
 		E99F39BC2A531D0C003045FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99F39BB2A531D0C003045FA /* Assets.xcassets */; };
 		E99F39BF2A531D0C003045FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99F39BE2A531D0C003045FA /* Preview Assets.xcassets */; };
 		E99F39C92A531D0D003045FA /* DealsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39C82A531D0D003045FA /* DealsAppTests.swift */; };
 		E99F39D32A531D0D003045FA /* DealsAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39D22A531D0D003045FA /* DealsAppUITests.swift */; };
 		E99F39D52A531D0D003045FA /* DealsAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39D42A531D0D003045FA /* DealsAppUITestsLaunchTests.swift */; };
+		E99F39E62A531D9D003045FA /* DealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39E22A531D9D003045FA /* DealsService.swift */; };
+		E99F39E72A531D9D003045FA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39E42A531D9D003045FA /* HomeViewModel.swift */; };
+		E99F39E82A531D9D003045FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39E52A531D9D003045FA /* HomeView.swift */; };
+		E99F39EA2A531DB5003045FA /* getDealsWithAugments.json in Resources */ = {isa = PBXBuildFile; fileRef = E99F39E92A531DB5003045FA /* getDealsWithAugments.json */; };
+		E99F39ED2A531DC4003045FA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39EC2A531DC3003045FA /* APIError.swift */; };
+		E99F39F52A53205A003045FA /* DealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39F42A53205A003045FA /* DealsResponse.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		E99F39B42A531D0A003045FA /* DealsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99F39B72A531D0A003045FA /* DealsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsAppApp.swift; sourceTree = "<group>"; };
-		E99F39B92A531D0A003045FA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		E99F39BB2A531D0C003045FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E99F39BE2A531D0C003045FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E99F39C42A531D0D003045FA /* DealsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DealsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +48,12 @@
 		E99F39CE2A531D0D003045FA /* DealsAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DealsAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99F39D22A531D0D003045FA /* DealsAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsAppUITests.swift; sourceTree = "<group>"; };
 		E99F39D42A531D0D003045FA /* DealsAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E99F39E22A531D9D003045FA /* DealsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsService.swift; sourceTree = "<group>"; };
+		E99F39E42A531D9D003045FA /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		E99F39E52A531D9D003045FA /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		E99F39E92A531DB5003045FA /* getDealsWithAugments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getDealsWithAugments.json; sourceTree = "<group>"; };
+		E99F39EC2A531DC3003045FA /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		E99F39F42A53205A003045FA /* DealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,9 +104,12 @@
 		E99F39B62A531D0A003045FA /* DealsApp */ = {
 			isa = PBXGroup;
 			children = (
+				E99F39F12A532009003045FA /* Network */,
 				E99F39B72A531D0A003045FA /* DealsAppApp.swift */,
-				E99F39B92A531D0A003045FA /* ContentView.swift */,
+				E99F39EB2A531DC3003045FA /* Shared */,
+				E99F39E12A531D9D003045FA /* Screens */,
 				E99F39BB2A531D0C003045FA /* Assets.xcassets */,
+				E99F39E92A531DB5003045FA /* getDealsWithAugments.json */,
 				E99F39BD2A531D0C003045FA /* Preview Content */,
 			);
 			path = DealsApp;
@@ -125,6 +138,40 @@
 				E99F39D42A531D0D003045FA /* DealsAppUITestsLaunchTests.swift */,
 			);
 			path = DealsAppUITests;
+			sourceTree = "<group>";
+		};
+		E99F39E12A531D9D003045FA /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				E99F39E32A531D9D003045FA /* DealsHomePage */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		E99F39E32A531D9D003045FA /* DealsHomePage */ = {
+			isa = PBXGroup;
+			children = (
+				E99F39E52A531D9D003045FA /* HomeView.swift */,
+				E99F39E42A531D9D003045FA /* HomeViewModel.swift */,
+			);
+			path = DealsHomePage;
+			sourceTree = "<group>";
+		};
+		E99F39EB2A531DC3003045FA /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				E99F39EC2A531DC3003045FA /* APIError.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		E99F39F12A532009003045FA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E99F39E22A531D9D003045FA /* DealsService.swift */,
+				E99F39F42A53205A003045FA /* DealsResponse.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99F39EA2A531DB5003045FA /* getDealsWithAugments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +305,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E99F39BA2A531D0A003045FA /* ContentView.swift in Sources */,
+				E99F39E62A531D9D003045FA /* DealsService.swift in Sources */,
 				E99F39B82A531D0A003045FA /* DealsAppApp.swift in Sources */,
+				E99F39E82A531D9D003045FA /* HomeView.swift in Sources */,
+				E99F39E72A531D9D003045FA /* HomeViewModel.swift in Sources */,
+				E99F39F52A53205A003045FA /* DealsResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +327,7 @@
 			files = (
 				E99F39D52A531D0D003045FA /* DealsAppUITestsLaunchTests.swift in Sources */,
 				E99F39D32A531D0D003045FA /* DealsAppUITests.swift in Sources */,
+				E99F39ED2A531DC4003045FA /* APIError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
