@@ -6,19 +6,12 @@
 //
 
 import Foundation
+import Combine
 
 enum APIError: Error {
-    case invalidUrl, decodingError
+    case invalidUrl
+    case decodingError
 }
-
-
-
-
-
-
-
-
-
 
 class DealsService {
     func fetchDeals() throws -> [Deal] {
@@ -29,8 +22,8 @@ class DealsService {
         let data = try Data(contentsOf: url)
         
         do {
-            let result = try JSONDecoder().decode(DealsResponse.self, from: data)
-            return result.data.deals
+            let response = try JSONDecoder().decode(DealsResponse.self, from: data)
+            return response.data.deals
         } catch {
             throw APIError.decodingError
         }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 @main
-struct DealsAppApp: App {
+struct DealsApp: App {
     var body: some Scene {
         WindowGroup {
             HomeView()

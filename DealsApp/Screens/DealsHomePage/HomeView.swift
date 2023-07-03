@@ -8,15 +8,37 @@
 import SwiftUI
 
 struct HomeView: View {
+    @State var dealsService = DealsService()
+    @State private var deals: [Deal] = []
     
     var body: some View {
+        Text("Hello")
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            if deals.isEmpty {
+                ProgressView() // Show a loading indicator while fetching deals
+            } else {
+                List(deals) { deal in
+                    Text(deal.title)
+                        .font(.headline)
+                    Text(deal.description)
+                        .font(.subheadline)
+                    // Add more views to display other deal information
+                }
+            }
         }
         .padding()
+        .onAppear {
+            fetchDeals()
+        }
+    }
+    
+    private func fetchDeals() {
+        do {
+            deals = try dealsService.fetchDeals()
+        } catch {
+            // Handle error while fetching deals
+            print("Error: \(error)")
+        }
     }
 }
 

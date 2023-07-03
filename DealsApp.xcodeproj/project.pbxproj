@@ -16,9 +16,10 @@
 		E99F39E62A531D9D003045FA /* DealsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39E22A531D9D003045FA /* DealsService.swift */; };
 		E99F39E72A531D9D003045FA /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39E42A531D9D003045FA /* HomeViewModel.swift */; };
 		E99F39E82A531D9D003045FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39E52A531D9D003045FA /* HomeView.swift */; };
-		E99F39EA2A531DB5003045FA /* getDealsWithAugments.json in Resources */ = {isa = PBXBuildFile; fileRef = E99F39E92A531DB5003045FA /* getDealsWithAugments.json */; };
 		E99F39ED2A531DC4003045FA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39EC2A531DC3003045FA /* APIError.swift */; };
 		E99F39F52A53205A003045FA /* DealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39F42A53205A003045FA /* DealsResponse.swift */; };
+		E99F39FA2A534611003045FA /* getDealsWithAugments.json in Resources */ = {isa = PBXBuildFile; fileRef = E99F39F92A534611003045FA /* getDealsWithAugments.json */; };
+		E99F39FC2A534AD4003045FA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E99F39FB2A534AD4003045FA /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,9 +52,10 @@
 		E99F39E22A531D9D003045FA /* DealsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsService.swift; sourceTree = "<group>"; };
 		E99F39E42A531D9D003045FA /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		E99F39E52A531D9D003045FA /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		E99F39E92A531DB5003045FA /* getDealsWithAugments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getDealsWithAugments.json; sourceTree = "<group>"; };
 		E99F39EC2A531DC3003045FA /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E99F39F42A53205A003045FA /* DealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsResponse.swift; sourceTree = "<group>"; };
+		E99F39F92A534611003045FA /* getDealsWithAugments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = getDealsWithAugments.json; path = ../../DAPP/DealsApp/getDealsWithAugments.json; sourceTree = "<group>"; };
+		E99F39FB2A534AD4003045FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,12 +106,13 @@
 		E99F39B62A531D0A003045FA /* DealsApp */ = {
 			isa = PBXGroup;
 			children = (
+				E99F39F92A534611003045FA /* getDealsWithAugments.json */,
+				E99F39FB2A534AD4003045FA /* Info.plist */,
 				E99F39F12A532009003045FA /* Network */,
 				E99F39B72A531D0A003045FA /* DealsAppApp.swift */,
 				E99F39EB2A531DC3003045FA /* Shared */,
 				E99F39E12A531D9D003045FA /* Screens */,
 				E99F39BB2A531D0C003045FA /* Assets.xcassets */,
-				E99F39E92A531DB5003045FA /* getDealsWithAugments.json */,
 				E99F39BD2A531D0C003045FA /* Preview Content */,
 			);
 			path = DealsApp;
@@ -278,8 +281,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99F39FC2A534AD4003045FA /* Info.plist in Resources */,
 				E99F39BF2A531D0C003045FA /* Preview Assets.xcassets in Resources */,
 				E99F39BC2A531D0C003045FA /* Assets.xcassets in Resources */,
+				E99F39FA2A534611003045FA /* getDealsWithAugments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,7 +299,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E99F39EA2A531DB5003045FA /* getDealsWithAugments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +476,7 @@
 				DEVELOPMENT_TEAM = G9Z86K3593;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = DealsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -501,7 +505,7 @@
 				DEVELOPMENT_TEAM = G9Z86K3593;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_FILE = DealsApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";

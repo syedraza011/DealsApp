@@ -4,47 +4,13 @@
 //
 //  Created by Syed Raza on 7/3/23.
 //
-//
-//struct DealsResponse: Decodable {
-//    let data: DealsData
-//}
-//
-//struct DealsData: Decodable, Identifiable {
-//    let id: String
-//    let title: String
-//    let url: String
-//    let price: Int
-//    let description: String
-//    let product: Product
-//    let createdAt: String
-//    let updatedAt: String
-//    let likes: [LikedDeal]
-//}
-//
-//struct Product: Decodable {
-//    let availability: String
-//    let image: String
-//    let description: String
-//    let sku: String
-//    let updatedAt: String
-//}
-//
-//struct LikedDeal: Decodable {
-//    let id: String
-//    let user: User
-//}
-//
-//struct User: Decodable {
-//    let id: String
-//    let name: String
-//    let likes: [LikedDeal]
-//}
 
-struct Response: Codable {
+
+struct DealsResponse: Decodable {
     let data: DealsData
 }
 
-struct DealsData: Codable {
+struct DealsData: Decodable {
     let deals: [Deal]
 }
 
@@ -75,7 +41,7 @@ struct LikedDeal: Decodable {
     let deal: Deal
 }
 
-struct DislikedDeal: Codable {
+struct DislikedDeal: Decodable {
     let id: String
     let deal: Deal
 }
