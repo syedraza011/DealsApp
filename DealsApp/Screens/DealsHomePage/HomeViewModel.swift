@@ -2,7 +2,7 @@
 //  HomeViewModel.swift
 //  DealsApp
 //
-//  Created by renupunjabi on 7/3/23.
+//  Created by Syed Raza on 7/3/23.
 
 import Foundation
 import SwiftUI
