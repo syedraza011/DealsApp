@@ -19,6 +19,9 @@
 		E99F39E82A531D9D003045FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39E52A531D9D003045FA /* HomeView.swift */; };
 		E99F39ED2A531DC4003045FA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39EC2A531DC3003045FA /* APIError.swift */; };
 		E99F39F52A53205A003045FA /* DealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39F42A53205A003045FA /* DealsResponse.swift */; };
+		E99F39FE2A58B9F1003045FA /* DealDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39FD2A58B9F1003045FA /* DealDetailsView.swift */; };
+		E99F3A032A58BB0E003045FA /* URLImage in Frameworks */ = {isa = PBXBuildFile; productRef = E99F3A022A58BB0E003045FA /* URLImage */; };
+		E99F3A052A58BB0E003045FA /* URLImageStore in Frameworks */ = {isa = PBXBuildFile; productRef = E99F3A042A58BB0E003045FA /* URLImageStore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,7 @@
 		E99F39EC2A531DC3003045FA /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E99F39F42A53205A003045FA /* DealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsResponse.swift; sourceTree = "<group>"; };
 		E99F39FB2A534AD4003045FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E99F39FD2A58B9F1003045FA /* DealDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealDetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +66,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99F3A052A58BB0E003045FA /* URLImageStore in Frameworks */,
+				E99F3A032A58BB0E003045FA /* URLImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,13 +111,13 @@
 		E99F39B62A531D0A003045FA /* DealsApp */ = {
 			isa = PBXGroup;
 			children = (
+				7C2AFDCD2A588B2D00BA663D /* getDealsWithAugments.json */,
 				E99F39FB2A534AD4003045FA /* Info.plist */,
 				E99F39F12A532009003045FA /* Network */,
 				E99F39B72A531D0A003045FA /* DealsApp.swift */,
 				E99F39EB2A531DC3003045FA /* Shared */,
 				E99F39E12A531D9D003045FA /* Screens */,
 				E99F39BB2A531D0C003045FA /* Assets.xcassets */,
-				7C2AFDCD2A588B2D00BA663D /* getDealsWithAugments.json */,
 				E99F39BD2A531D0C003045FA /* Preview Content */,
 			);
 			path = DealsApp;
@@ -155,6 +161,7 @@
 			children = (
 				E99F39E52A531D9D003045FA /* HomeView.swift */,
 				E99F39E42A531D9D003045FA /* HomeViewModel.swift */,
+				E99F39FD2A58B9F1003045FA /* DealDetailsView.swift */,
 			);
 			path = DealsHomePage;
 			sourceTree = "<group>";
@@ -192,6 +199,10 @@
 			dependencies = (
 			);
 			name = DealsApp;
+			packageProductDependencies = (
+				E99F3A022A58BB0E003045FA /* URLImage */,
+				E99F3A042A58BB0E003045FA /* URLImageStore */,
+			);
 			productName = DealsApp;
 			productReference = E99F39B42A531D0A003045FA /* DealsApp.app */;
 			productType = "com.apple.product-type.application";
@@ -264,6 +275,9 @@
 				Base,
 			);
 			mainGroup = E99F39AB2A531D0A003045FA;
+			packageReferences = (
+				E99F3A012A58BB0E003045FA /* XCRemoteSwiftPackageReference "url-image" */,
+			);
 			productRefGroup = E99F39B52A531D0A003045FA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -308,6 +322,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99F39E62A531D9D003045FA /* DealsService.swift in Sources */,
+				E99F39FE2A58B9F1003045FA /* DealDetailsView.swift in Sources */,
 				E99F39B82A531D0A003045FA /* DealsApp.swift in Sources */,
 				E99F39E82A531D9D003045FA /* HomeView.swift in Sources */,
 				E99F39E72A531D9D003045FA /* HomeViewModel.swift in Sources */,
@@ -637,6 +652,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E99F3A012A58BB0E003045FA /* XCRemoteSwiftPackageReference "url-image" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dmytro-anokhin/url-image.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E99F3A022A58BB0E003045FA /* URLImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E99F3A012A58BB0E003045FA /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImage;
+		};
+		E99F3A042A58BB0E003045FA /* URLImageStore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E99F3A012A58BB0E003045FA /* XCRemoteSwiftPackageReference "url-image" */;
+			productName = URLImageStore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E99F39AC2A531D0A003045FA /* Project object */;
 }
