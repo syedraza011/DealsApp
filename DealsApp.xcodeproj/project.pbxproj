@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E99F39B82A531D0A003045FA /* DealsAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39B72A531D0A003045FA /* DealsAppApp.swift */; };
+		7C2AFDCE2A588B2D00BA663D /* getDealsWithAugments.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C2AFDCD2A588B2D00BA663D /* getDealsWithAugments.json */; };
+		E99F39B82A531D0A003045FA /* DealsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39B72A531D0A003045FA /* DealsApp.swift */; };
 		E99F39BC2A531D0C003045FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99F39BB2A531D0C003045FA /* Assets.xcassets */; };
 		E99F39BF2A531D0C003045FA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99F39BE2A531D0C003045FA /* Preview Assets.xcassets */; };
 		E99F39C92A531D0D003045FA /* DealsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39C82A531D0D003045FA /* DealsAppTests.swift */; };
@@ -18,8 +19,6 @@
 		E99F39E82A531D9D003045FA /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39E52A531D9D003045FA /* HomeView.swift */; };
 		E99F39ED2A531DC4003045FA /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39EC2A531DC3003045FA /* APIError.swift */; };
 		E99F39F52A53205A003045FA /* DealsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99F39F42A53205A003045FA /* DealsResponse.swift */; };
-		E99F39FA2A534611003045FA /* getDealsWithAugments.json in Resources */ = {isa = PBXBuildFile; fileRef = E99F39F92A534611003045FA /* getDealsWithAugments.json */; };
-		E99F39FC2A534AD4003045FA /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E99F39FB2A534AD4003045FA /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,8 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7C2AFDCD2A588B2D00BA663D /* getDealsWithAugments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = getDealsWithAugments.json; sourceTree = "<group>"; };
 		E99F39B42A531D0A003045FA /* DealsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DealsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E99F39B72A531D0A003045FA /* DealsAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsAppApp.swift; sourceTree = "<group>"; };
+		E99F39B72A531D0A003045FA /* DealsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsApp.swift; sourceTree = "<group>"; };
 		E99F39BB2A531D0C003045FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E99F39BE2A531D0C003045FA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E99F39C42A531D0D003045FA /* DealsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DealsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -54,7 +54,6 @@
 		E99F39E52A531D9D003045FA /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		E99F39EC2A531DC3003045FA /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		E99F39F42A53205A003045FA /* DealsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DealsResponse.swift; sourceTree = "<group>"; };
-		E99F39F92A534611003045FA /* getDealsWithAugments.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = getDealsWithAugments.json; path = ../../DAPP/DealsApp/getDealsWithAugments.json; sourceTree = "<group>"; };
 		E99F39FB2A534AD4003045FA /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,13 +105,13 @@
 		E99F39B62A531D0A003045FA /* DealsApp */ = {
 			isa = PBXGroup;
 			children = (
-				E99F39F92A534611003045FA /* getDealsWithAugments.json */,
 				E99F39FB2A534AD4003045FA /* Info.plist */,
 				E99F39F12A532009003045FA /* Network */,
-				E99F39B72A531D0A003045FA /* DealsAppApp.swift */,
+				E99F39B72A531D0A003045FA /* DealsApp.swift */,
 				E99F39EB2A531DC3003045FA /* Shared */,
 				E99F39E12A531D9D003045FA /* Screens */,
 				E99F39BB2A531D0C003045FA /* Assets.xcassets */,
+				7C2AFDCD2A588B2D00BA663D /* getDealsWithAugments.json */,
 				E99F39BD2A531D0C003045FA /* Preview Content */,
 			);
 			path = DealsApp;
@@ -281,10 +280,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E99F39FC2A534AD4003045FA /* Info.plist in Resources */,
 				E99F39BF2A531D0C003045FA /* Preview Assets.xcassets in Resources */,
 				E99F39BC2A531D0C003045FA /* Assets.xcassets in Resources */,
-				E99F39FA2A534611003045FA /* getDealsWithAugments.json in Resources */,
+				7C2AFDCE2A588B2D00BA663D /* getDealsWithAugments.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -310,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E99F39E62A531D9D003045FA /* DealsService.swift in Sources */,
-				E99F39B82A531D0A003045FA /* DealsAppApp.swift in Sources */,
+				E99F39B82A531D0A003045FA /* DealsApp.swift in Sources */,
 				E99F39E82A531D9D003045FA /* HomeView.swift in Sources */,
 				E99F39E72A531D9D003045FA /* HomeViewModel.swift in Sources */,
 				E99F39F52A53205A003045FA /* DealsResponse.swift in Sources */,

@@ -5,12 +5,11 @@
 //  Created by Syed Raza on 7/3/23.
 //
 
-
 struct DealsResponse: Decodable {
-    let data: DealsData
+    let data: Deals
 }
 
-struct DealsData: Decodable {
+struct Deals: Decodable {
     let deals: [Deal]
 }
 
@@ -23,12 +22,12 @@ struct Deal: Decodable, Identifiable {
     let product: Product
     let createdAt: String
     let updatedAt: String
-    let likes: [LikedDeal]
-    let dislikes: [DislikedDeal]
+    let likes: [Like]
+    let dislikes: [Dislike]
     let comments: [Comment]
 }
 
-struct Product: Codable {
+struct Product: Decodable {
     let availability: String
     let image: String
     let description: String
@@ -36,24 +35,29 @@ struct Product: Codable {
     let updatedAt: String
 }
 
-struct LikedDeal: Decodable {
+struct Like: Decodable {
     let id: String
-    let deal: Deal
+    let user: User
 }
 
-struct DislikedDeal: Decodable {
+struct User: Decodable {
     let id: String
-    let deal: Deal
+    let name: String
 }
 
-struct Comment: Codable, Identifiable {
+struct Dislike: Decodable {
+    let id: String
+    let user: User
+}
+
+struct Comment: Decodable, Identifiable {
     let id: String
     let createdAt: String
     let text: String
     let user: User
 }
 
-struct User: Codable {
-    let id: String
-    let name: String
-}
+
+
+
+

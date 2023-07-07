@@ -6,18 +6,17 @@
 //
 
 import SwiftUI
-
 struct HomeView: View {
-    @State var dealsService = DealsService()
-    @State private var deals: [Deal] = []
+    @StateObject var viewModel = HomeViewModel()
     
     var body: some View {
-        Text("Hello")
         VStack {
-            if deals.isEmpty {
+          
+            
+            if viewModel.deals.isEmpty {
                 ProgressView() // Show a loading indicator while fetching deals
             } else {
-                List(deals) { deal in
+                List(viewModel.deals) { deal in
                     Text(deal.title)
                         .font(.headline)
                     Text(deal.description)
@@ -28,19 +27,12 @@ struct HomeView: View {
         }
         .padding()
         .onAppear {
-            fetchDeals()
-        }
-    }
-    
-    private func fetchDeals() {
-        do {
-            deals = try dealsService.fetchDeals()
-        } catch {
-            // Handle error while fetching deals
-            print("Error: \(error)")
+            viewModel.getDeals()
         }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
