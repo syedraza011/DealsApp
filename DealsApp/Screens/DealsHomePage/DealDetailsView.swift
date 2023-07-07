@@ -6,29 +6,55 @@
 //
 import SwiftUI
 import URLImage
+
 struct DealDetailView: View {
     let deal: Deal
+    let discountPercentage: Int
+
+    init(deal: Deal) {
+        self.deal = deal
+        self.discountPercentage = Int.random(in: 18...30)
+    }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 16) {
-                AsyncImage(url: URL(string: deal.product.image)) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .cornerRadius(8)
-                    case .failure:
-                        Image(systemName: "xmark.circle")
-                            .font(.largeTitle)
-                            .foregroundColor(.red)
+                ZStack(alignment: .topTrailing) {
+                    if let imageUrl = URL(string: deal.product.image) {
+                        AsyncImage(url: imageUrl) { phase in
+                            switch phase {
+                            case .empty:
+                                ProgressView()
+                            case .success(let image):
+                                image
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                            case .failure:
+                                Image(systemName: "xmark.circle")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.red)
+                            @unknown default:
+                                EmptyView()
+                            }
+                        }
+                        .frame(height: 200)
+                    } else {
+                        Color.gray
                             .frame(height: 200)
-                            .cornerRadius(8)
-                    @unknown default:
-                        EmptyView()
+                    }
+
+                    if showDiscountBanner {
+                        VStack {
+                            Text("-\(discountPercentage)%")
+                                .font(.headline)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .padding(8)
+                                .background(Color.green)
+                                .cornerRadius(8)
+                        }
+                        .padding(16)
+                        .opacity(1)
                     }
                 }
 
@@ -58,38 +84,24 @@ struct DealDetailView: View {
 
                 // Likes
                 VStack(alignment: .leading) {
-                    Text("Likes:")
+                    Image(systemName: "hand.thumbsup")
+                    Text("Likes: \(deal.likes.count)")
                         .font(.headline)
                         .padding(.bottom, 4)
-
-                    if deal.likes.isEmpty {
-                        Text("No likes yet")
-                            .foregroundColor(.secondary)
-                    } else {
-                        Text("\(deal.likes.count) people liked this")
-                            .foregroundColor(.secondary)
-                            .onTapGesture {
-                                // Toggle logic to show/hide individual names
-                            }
-                    }
+                        .onTapGesture {
+                            // Show/hide individual names logic
+                        }
                 }
 
                 // Dislikes
                 VStack(alignment: .leading) {
-                    Text("Dislikes:")
+                    Image(systemName: "hand.thumbsdown")
+                    Text("Dislikes: \(deal.dislikes.count)")
                         .font(.headline)
                         .padding(.bottom, 4)
-
-                    if deal.dislikes.isEmpty {
-                        Text("No dislikes yet")
-                            .foregroundColor(.secondary)
-                    } else {
-                        Text("\(deal.dislikes.count) people disliked this")
-                            .foregroundColor(.secondary)
-                            .onTapGesture {
-                                // Toggle logic to show/hide individual names
-                            }
-                    }
+                        .onTapGesture {
+                            // Show/hide individual names logic
+                        }
                 }
 
                 // Comments
@@ -121,5 +133,152 @@ struct DealDetailView: View {
         }
         .navigationBarTitle("Deal Details", displayMode: .inline)
     }
+
+    private var showDiscountBanner: Bool {
+        if let imageUrl = URL(string: deal.product.image) {
+            return imageIsSmall(imageUrl: imageUrl) || !imageExists(imageUrl: imageUrl)
+        }
+        return true
+    }
+
+    private func imageIsSmall(imageUrl: URL) -> Bool {
+        // Determine the size of the image and return true if it is small
+        // You can use an image processing library or API to get the image size
+        // For simplicity, this implementation assumes the image size is small
+        return true
+    }
+
+    private func imageExists(imageUrl: URL) -> Bool {
+        // Check if the image exists or if it is a placeholder image
+        // You can use an API or check if the URL returns a valid image
+        // For simplicity, this implementation assumes the image does not exist
+        return false
+    }
 }
+
+
+
+
+
+
+
+//struct DealDetailView: View {
+//    let deal: Deal
+//
+//    var body: some View {
+//        ScrollView {
+//            VStack(spacing: 16) {
+//                AsyncImage(url: URL(string: deal.product.image)) { phase in
+//                    switch phase {
+//                    case .empty:
+//                        ProgressView()
+//                    case .success(let image):
+//                        image
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                            .cornerRadius(8)
+//                    case .failure:
+//                        Image(systemName: "xmark.circle")
+//                            .font(.largeTitle)
+//                            .foregroundColor(.red)
+//                            .frame(height: 200)
+//                            .cornerRadius(8)
+//                    @unknown default:
+//                        EmptyView()
+//                    }
+//                }
+//
+//                Text(deal.title)
+//                    .font(.title)
+//                    .fontWeight(.bold)
+//                    .multilineTextAlignment(.center)
+//                    .padding()
+//
+//                Text(deal.description)
+//                    .font(.body)
+//                    .multilineTextAlignment(.center)
+//                    .foregroundColor(.secondary)
+//                    .padding(.horizontal)
+//
+//                Text("Price: $\(deal.price)")
+//                    .font(.headline)
+//                    .foregroundColor(.green)
+//
+//                Text("Availability: \(deal.product.availability)")
+//                    .font(.headline)
+//                    .foregroundColor(.blue)
+//
+//                Text("Updated At: \(deal.product.updatedAt)")
+//                    .font(.headline)
+//                    .foregroundColor(.gray)
+//
+//                // Likes
+//                VStack(alignment: .leading) {
+//                    Image(systemName: "hand.thumbsup")
+//                    Text("Likes:")
+//                        .font(.headline)
+//                        .padding(.bottom, 4)
+//
+//                    if deal.likes.isEmpty {
+//
+//                        Text("No likes yet")
+//                            .foregroundColor(.secondary)
+//                    } else {
+//                        Image(systemName: "hand.thumbsdown")
+//                        Text("\(deal.likes.count) people liked this")
+//                            .foregroundColor(.secondary)
+//                            .onTapGesture {
+//                                // Toggle logic to show/hide individual names
+//                            }
+//                    }
+//                }
+//
+//                // Dislikes
+//                VStack(alignment: .leading) {
+//                    Text("Dislikes:")
+//                        .font(.headline)
+//                        .padding(.bottom, 4)
+//
+//                    if deal.dislikes.isEmpty {
+//                        Text("No dislikes yet")
+//                            .foregroundColor(.secondary)
+//                    } else {
+//                        Text("\(deal.dislikes.count) people disliked this")
+//                            .foregroundColor(.secondary)
+//                            .onTapGesture {
+//                                // Toggle logic to show/hide individual names
+//                            }
+//                    }
+//                }
+//
+//                // Comments
+//                VStack(alignment: .leading) {
+//                    Text("Comments:")
+//                        .font(.headline)
+//                        .padding(.bottom, 4)
+//
+//                    if deal.comments.isEmpty {
+//                        Text("No comments yet")
+//                            .foregroundColor(.secondary)
+//                    } else {
+//                        ForEach(deal.comments) { comment in
+//                            VStack(alignment: .leading) {
+//                                Text(comment.user.name)
+//                                    .font(.subheadline)
+//                                    .fontWeight(.bold)
+//                                Text(comment.text)
+//                                    .font(.subheadline)
+//                            }
+//                            .padding(.vertical, 4)
+//                        }
+//                    }
+//                }
+//
+//                Spacer()
+//            }
+//            .padding()
+//        }
+//        .navigationBarTitle("Deal Details", displayMode: .inline)
+//    }
+//}
 
