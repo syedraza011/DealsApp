@@ -28,6 +28,7 @@ struct Deal: Decodable, Identifiable {
     let dislikes: [Dislike]
     let comments: [Comment]
     
+    
     static func == (lhs: Deal, rhs: Deal) -> Bool {
           return lhs.id == rhs.id
       }
