@@ -111,6 +111,7 @@
 		E99F39B62A531D0A003045FA /* DealsApp */ = {
 			isa = PBXGroup;
 			children = (
+				E99F3A082A58F6E7003045FA /* Models */,
 				7C2AFDCD2A588B2D00BA663D /* getDealsWithAugments.json */,
 				E99F39FB2A534AD4003045FA /* Info.plist */,
 				E99F39F12A532009003045FA /* Network */,
@@ -178,9 +179,16 @@
 			isa = PBXGroup;
 			children = (
 				E99F39E22A531D9D003045FA /* DealsService.swift */,
-				E99F39F42A53205A003045FA /* DealsResponse.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		E99F3A082A58F6E7003045FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E99F39F42A53205A003045FA /* DealsResponse.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
