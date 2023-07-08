@@ -56,6 +56,7 @@ struct HomeView: View {
                                 HStack {
                                     HStack {
                                         Image(systemName: "hand.thumbsup")
+                                            .foregroundColor(.blue)
                                         Text(" \(deal.likes.count)")
                                     }
                                     .font(.headline)
@@ -68,7 +69,9 @@ struct HomeView: View {
 
                                     HStack {
                                         Image(systemName: "hand.thumbsdown")
+                                            .foregroundColor(.blue)
                                         Text(" \(deal.dislikes.count)")
+                                         
                                     }
                                     .font(.headline)
                                     .padding(.bottom, 4)
@@ -82,6 +85,12 @@ struct HomeView: View {
                                         toggleDealExpansion(deal)
                                     }) {
                                         Image(systemName: "text.bubble")
+                                            .resizable()
+                                            .aspectRatio(contentMode: .fit)
+                                            .frame(width: 20, height: 20)
+                                            .foregroundColor(.blue)
+
+                                            
                                     }
                                     .foregroundColor(.primary)
                                    
@@ -115,7 +124,8 @@ struct HomeView: View {
             .onAppear {
                 viewModel.getDeals()
             }
-            .navigationBarTitle("Deals")
+            .navigationBarTitle("The Amazon Killer")
+            
         }
     }
 
